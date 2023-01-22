@@ -8,7 +8,7 @@
 import Foundation
 import Contacts
 
-struct ContactPhoneticNames {
+public struct ContactPhoneticNames {
     var store: CNContactStore
     var contacts: [CNContact]
     var dryRun: Bool

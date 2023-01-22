@@ -1,13 +1,7 @@
-//
-//  main.swift
-//  PhoneticNames
-//
-//  Created by Bill Chen on 2023/1/21.
-//
-
-import Foundation
 import ArgumentParser
+import Foundation
 
+@main
 struct PhoneticNames: ParsableCommand {
 
     @Flag(name: [.customShort("d"), .customLong("dry")], help: "Dry run without modifying the contacts.")
@@ -32,5 +26,3 @@ struct PhoneticNames: ParsableCommand {
         }
     }
 }
-
-PhoneticNames.main()

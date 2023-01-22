@@ -22,9 +22,19 @@ If you do not specify any options, the tool will only add phonetic names for con
 
 Download the latest universal binary build from Github Release Page and copy the binary to one of your $PATH folders (`/usr/local/bin`).
 
+
+## Build
+
 **The project is written in Swift 5.7, Xcode 14.2, tested on macOS 13.1.** It should also work on macOS 10.11+ (The minimum OS version for [Contacts](https://developer.apple.com/documentation/contacts) API). The conversion from Chinese character to phonetic names is supported by `Founadtion`'s `.mandarinToLatin` transformation. If some of phonetic names are incorrect, you can clone this project and add your customized name maps.
 
-## Predecessor
+Build with:
+
+```bash
+swift package resolve
+swift build -c release --arch arm64 --arch x86_64
+```
+
+## Predecessors
 
 There're a few projects with the same functionality. I've tried them and found that they exist some permission issues for the latest OS or uses older APIs, so I decided to make a new one. You can also check them out if this tool is not working for you:
 
