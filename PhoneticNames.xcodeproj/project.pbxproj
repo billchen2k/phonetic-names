@@ -39,6 +39,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		350D5216598F0B9B8000D64A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EE2770B0297C3C7C003492CD /* PhoneticNames */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PhoneticNames; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE2770B3297C3C7C003492CD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EE2770BA297C3C95003492CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 			children = (
 				EE2770B2297C3C7C003492CD /* PhoneticNames */,
 				EE2770B1297C3C7C003492CD /* Products */,
+				350D5216598F0B9B8000D64A /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
