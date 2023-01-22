@@ -8,23 +8,41 @@
 
 /* Begin PBXBuildFile section */
 		EE2770B4297C3C7C003492CD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2770B3297C3C7C003492CD /* main.swift */; };
+		EE2770BD297C3D40003492CD /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = EE2770BC297C3D40003492CD /* ArgumentParser */; };
+		EE2770BF297C3D7E003492CD /* ContactPhoneticNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2770BE297C3D7E003492CD /* ContactPhoneticNames.swift */; };
+		EEE8B2F3297D25A200D4153C /* Info.plist in Copy Files */ = {isa = PBXBuildFile; fileRef = EE2770BA297C3C95003492CD /* Info.plist */; };
+		EEE8B2F5297D265700D4153C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE2770BA297C3C95003492CD /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		EE2770AE297C3C7C003492CD /* CopyFiles */ = {
+		EE2770AE297C3C7C003492CD /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		EEE8B2F2297D259200D4153C /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				EEE8B2F3297D25A200D4153C /* Info.plist in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EE2770B0297C3C7C003492CD /* PhoneticNames */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PhoneticNames; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE2770B3297C3C7C003492CD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EE2770BA297C3C95003492CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE2770BE297C3D7E003492CD /* ContactPhoneticNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPhoneticNames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE2770BD297C3D40003492CD /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				EE2770B3297C3C7C003492CD /* main.swift */,
+				EE2770BA297C3C95003492CD /* Info.plist */,
+				EE2770BE297C3D7E003492CD /* ContactPhoneticNames.swift */,
 			);
 			path = PhoneticNames;
 			sourceTree = "<group>";
@@ -71,13 +92,18 @@
 			buildPhases = (
 				EE2770AC297C3C7C003492CD /* Sources */,
 				EE2770AD297C3C7C003492CD /* Frameworks */,
-				EE2770AE297C3C7C003492CD /* CopyFiles */,
+				EE2770AE297C3C7C003492CD /* Copy Files */,
+				EEE8B2F4297D265200D4153C /* Resources */,
+				EEE8B2F2297D259200D4153C /* Copy Files */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = PhoneticNames;
+			packageProductDependencies = (
+				EE2770BC297C3D40003492CD /* ArgumentParser */,
+			);
 			productName = PhoneticNames;
 			productReference = EE2770B0297C3C7C003492CD /* PhoneticNames */;
 			productType = "com.apple.product-type.tool";
@@ -106,6 +132,9 @@
 				Base,
 			);
 			mainGroup = EE2770A7297C3C7C003492CD;
+			packageReferences = (
+				EE2770BB297C3D40003492CD /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
 			productRefGroup = EE2770B1297C3C7C003492CD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -115,12 +144,24 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		EEE8B2F4297D265200D4153C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEE8B2F5297D265700D4153C /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EE2770AC297C3C7C003492CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EE2770B4297C3C7C003492CD /* main.swift in Sources */,
+				EE2770BF297C3D7E003492CD /* ContactPhoneticNames.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,8 +285,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7P6FX59VQB;
 				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "${SRCROOT}/PhoneticNames/Info.plist";
+				INSTALL_PATH = /;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = io.billc.phoneticnames;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -255,8 +302,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7P6FX59VQB;
 				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "${SRCROOT}/PhoneticNames/Info.plist";
+				INSTALL_PATH = /;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = io.billc.phoneticnames;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -284,6 +337,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE2770BB297C3D40003492CD /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE2770BC297C3D40003492CD /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE2770BB297C3D40003492CD /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EE2770A8297C3C7C003492CD /* Project object */;
 }
