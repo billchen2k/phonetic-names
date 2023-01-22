@@ -10,7 +10,7 @@ import Contacts
 
 public struct ContactPhoneticNames {
     var store: CNContactStore
-    var contacts: [CNContact]
+    var contacts: [CNMutableContact]
     var dryRun: Bool
     var force: Bool
 
@@ -80,12 +80,15 @@ public struct ContactPhoneticNames {
 
     private mutating func listContacts() {
         contacts.removeAll()
+//        let keys = [CNContactFamilyNameKey, CNContactMiddleNameKey, CNContactGivenNameKey,
+//                                       CNContactPhoneticFamilyNameKey, CNContactPhoneticMiddleNameKey, CNContactPhoneticGivenNameKey]
         let keys: [CNKeyDescriptor] = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
                                        CNContactFormatter.descriptorForRequiredKeys(for: .phoneticFullName)]
-        let fetchRequest = CNContactFetchRequest(keysToFetch: keys)
+        let fetchRequest = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
+        fetchRequest.mutableObjects = true
         do {
             try store.enumerateContacts(with: fetchRequest) { (contact, stop) in
-                contacts.append(contact)
+                contacts.append(contact.mutableCopy() as! CNMutableContact)
             }
         } catch {
             print("unable to list contacts. \(error)")
@@ -108,8 +111,7 @@ public struct ContactPhoneticNames {
                 print("Non-Chinese contact name: \(c.familyName)\(c.middleName)\(c.givenName), skipped.")
                 continue
             }
-            update(for: c.mutableCopy() as! CNMutableContact,
-                    withFamilyName: phoneticFamilyName,
+            update(for: c, withFamilyName: phoneticFamilyName,
                     withMiddleName: phoneticMiddleName,
                     withGivenName: phoneticGivenName)
         }
@@ -124,7 +126,7 @@ public struct ContactPhoneticNames {
     public mutating func runClean() {
         listContacts()
         for c in contacts {
-            update(for: c.mutableCopy() as! CNMutableContact, withFamilyName: "", withMiddleName: "", withGivenName: "")
+            update(for: c, withFamilyName: "", withMiddleName: "", withGivenName: "")
         }
         if dryRun {
             print("Dry run mode. Your contacts were not modified.")

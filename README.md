@@ -20,8 +20,7 @@ If you do not specify any options, the tool will only add phonetic names for con
 
 ## Installation
 
-Download the latest universal binary build from Github Release Page and copy the binary to one of your $PATH folders (`/usr/local/bin`).
-
+Download the latest universal binary build from Github Release Page, codesign it (`codesign --force --deep --sign - ./PhoneticNames`), and copy the binary to one of your $PATH folders (`/usr/local/bin`).
 
 ## Build
 
